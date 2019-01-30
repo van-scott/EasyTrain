@@ -66,6 +66,7 @@ class Submit(object):
         passengersDetails = {}
         for passengerJson in passengersList:
             passenger = PassengerDetails()
+            passengerJson.setdefault('sex_name','')
             passenger.passengerName = passengerJson['passenger_name'] or ''
             passenger.code = passengerJson['code'] or ''
             passenger.sexCode = passengerJson['sex_code'] or ''

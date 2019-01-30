@@ -38,7 +38,7 @@ def main():
             if submit.submit():
                 submit.showSubmitInfoPretty()
                 break
-            time.sleep(1)
+            # time.sleep(1)
         except Exception as e:
             Log.w(e)
     print(login.loginOut())

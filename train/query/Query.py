@@ -83,6 +83,7 @@ class Query(object):
     @staticmethod
     def __decode(queryResults, passengerType):
         for queryResult in queryResults:
+            # print(queryResult);
             info = queryResult.split('|')
             ticket = TicketDetails()
             ticket.passengerType = passengerType
@@ -152,6 +153,7 @@ class Query(object):
                 continue
             # filter seat
             for seatTypeName, seatTypeProperty in TrainUtils.seatWhich(seatTypes, ticket):
+                print(ticket,seatTypeName,seatTypeProperty)
                 if seatTypeProperty and seatTypeProperty != '无':
                     Log.v('%s: %s' % (seatTypeName, seatTypeProperty))
                     ticket.seatType = SEAT_TYPE[seatTypeName]
